@@ -41,10 +41,11 @@ console.log("null === undefined:" , null=== undefined); // false, olika typer.
 
 /*
  Reflektion
- "==" gör typkonvertering  och "===" på grund av att första trean är i stäng form och den andra inte och 
- den måste vara exakt samma typ som den ges för att den ska  accepteras.
- NaN är aldrig lika med sig själv null är undefined och det betyder att den har inget värde och den är tom
- === och den sista har inte samma type det är därför den blir false.
+== gör först en typkonvertering, vilket gör att värden som egentligen är olika typer ändå kan jämföras som lika.
+=== kräver däremot både samma värde och samma datatyp, 
+därför blir vissa jämförelser falska. NaN är unikt eftersom det aldrig är lika med sig själv. 
+null och undefined är lika med varandra med == men inte med === eftersom de är olika typer. 
+Detta visar varför det är viktigt att förstå skillnaden mellan lös och strikt jämförelse i JavaScript.
 
 */
 
