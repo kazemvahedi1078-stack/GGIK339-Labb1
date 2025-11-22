@@ -1,3 +1,4 @@
+
 // UPPGIFT 2    Variabler och scope
 
   //console.log(land); programmet kraschar.
@@ -6,16 +7,17 @@
 
 {
     let student = 70;
-    const land = "Afghanistan";
-    console.log(land); // man kan skriva ut const inuti blocket.
-    console.log(student);
     var ålder = 25;
+    const land = "Afghanistan";
+
+    console.log(student);
     console.log(ålder);
+    console.log(land); // man kan skriva ut const inuti blocket.
 
 }
-     // efter {}
-    //console.log(land); att nå const utanför blocket är omöjlig och programmet kraschar.
-   //console.log(student); det är samma med nyckerordet let den funkar bara inuti.
+  // efter {}
+  //console.log(land); att nå const utanför blocket är omöjlig och programmet kraschar.
+ //console.log(student); det är samma med nyckerordet let den funkar bara inuti.
    console.log(ålder);// skriver ut den i både fallen utanför och inuti.
 
 
@@ -32,26 +34,53 @@ för att den har inget värde.
 // UPPGIFT 3
 
 console.log("'2' == 2:", '2' == 2 )// true eftersom den gör typkonvertering
-console.log("'3' === 3:" , '3'===3); // på grund av att första trean är i sträng form och den andra inte och den måste vara exakt samma typ som den ges för att den accepterar.
+console.log("'3' === 3:" , '3'===3); // false på grund av att första trean är i sträng form och den andra inte och den måste vara exakt samma typ.
 
 
-console.log("NaN === NaN:" , NaN === NaN); // NaN är aldrig lika med sig själv
-console.log("null === undefined:" , null == undefined); // true eftersom null är undefined
-console.log("null === undefined:" , null=== undefined); // false, olika typer.
+console.log("NaN === NaN" , NaN === NaN); // false, NaN är aldrig lika med sig själv
+console.log("null === undefined" , null == undefined); // true eftersom null är undefined
+console.log("null === undefined" , null=== undefined); // false, olika typer.
 
 /*
  Reflektion
-== gör först en typkonvertering, vilket gör att värden som egentligen är olika typer ändå kan jämföras som lika.
-=== kräver däremot både samma värde och samma datatyp, 
-därför blir vissa jämförelser falska. NaN är unikt eftersom det aldrig är lika med sig själv. 
-null och undefined är lika med varandra med == men inte med === eftersom de är olika typer. 
-Detta visar varför det är viktigt att förstå skillnaden mellan lös och strikt jämförelse i JavaScript.
+== gör först en typkonvertering, vilket kan göra att olika datatyper ändå blir lika.
+=== kräver samma värde och samma datatyp, därför blir vissa jämförelser falska.
 
+När ett uttryck står för sig självt i en if-sats eller en ternary operator kontrolleras
+om uttrycket är truthy eller falsy. Det innebär att uttrycket avgör om koden körs eller inte.
+
+NaN är ett ogiltigt tal och är aldrig lika med sig själv.
+undefined betyder att ett värde saknas.
+null betyder att värdet är tomt men avsiktligt.
+null och undefined är lika med == men inte med === eftersom de är olika typer.
 */
 
 
 // uppgift 4
-const greet = (name) => {
-    console.log( name);
-    return "Hej " + name;
-};
+// En funktion som tar ett namn som parameter och retunerar "Hej" 
+function greet(name) {
+    return "Hej " + name; 
+}
+
+// Här anropar jag funktionen
+console.log(greet("Kazem"));
+
+ //variabeln name ligger utanför funktionen
+let name = 'Kazem';
+//Skriver ut
+console.log(name);
+
+console.log(greet(name));
+
+/*
+ Reflektion
+/*
+ Reflektion
+jag skapar en funktion som tar ett namn som parameter och returnerar texten "Hej" tillsammans med namnet. 
+Jag anropade funktionen både direkt i en console.log och med en separat variabel som också heter name. 
+Eftersom variabeln name ligger utanför funktionen påverkar den inte funktionsparametern  
+men jag kan ändå använda båda på olika sätt. 
+På så sätt ser man skillnaden mellan en parameter i en funktion och en variabel i det globala scopet.
+
+*/
+
