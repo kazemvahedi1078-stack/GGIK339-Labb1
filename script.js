@@ -31,15 +31,22 @@ för att den har inget värde.
 
 // UPPGIFT 3
 
-console.log("'8' == 8:", '8' == 8 )// true eftersom den gör typkonvertering
-console.log("'8' === 8:" , '8'===8); // på grund av att första åttan är i stäng form och den andra inte och den måste vara exakt samma typ som den ges för att den accepterar.
+console.log("'2' == 2:", '2' == 2 )// true eftersom den gör typkonvertering
+console.log("'3' === 3:" , '3'===3); // på grund av att första trean är i sträng form och den andra inte och den måste vara exakt samma typ som den ges för att den accepterar.
 
 
 console.log("NaN === NaN:" , NaN === NaN); // NaN är aldrig lika med sig själv
-
-
 console.log("null === undefined:" , null == undefined); // true eftersom null är undefined
 console.log("null === undefined:" , null=== undefined); // false, olika typer.
+
+/*
+ Reflektion
+ "==" gör typkonvertering  och "===" på grund av att första trean är i stäng form och den andra inte och 
+ den måste vara exakt samma typ som den ges för att den ska  accepteras.
+ NaN är aldrig lika med sig själv null är undefined och det betyder att den har inget värde och den är tom
+ === och den sista har inte samma type det är därför den blir false.
+
+*/
 
 
 // uppgift 4
